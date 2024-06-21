@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -19,5 +20,10 @@ module.exports = {
                 use: [path.resolve(__dirname, './loader/imooc-loader.js')]
             }
         ]
-    }
+    },
+    plugins:[
+        new webpack.BannerPlugin({
+            banner: '鲁a济南车，鲁b青岛的，鲁屙不晓得'
+        })
+    ]
 };
